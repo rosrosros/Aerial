@@ -66,6 +66,9 @@ namespace Aerial
             aerialUrl = "http://BOGUS/entries.json";
 #endif
 
+            //aerialUrl = "https://smukfestmedia.blob.core.windows.net/video/custom-entries.json";
+            aerialUrl = "C:\\Users\\ros\\Source\\Repos\\Aerial\\ScreenSaver\\custom-entries.json";
+
             // update anyway
             Caching.StartDelayedCache(aerialUrl);
 

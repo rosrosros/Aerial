@@ -13,6 +13,7 @@ namespace ScreenSaver
 {
     public partial class ScreenSaverForm : Form
     {
+        private TimeSpan fileStartTime;
         private int currentVideoIndex = 0;
         private DateTime lastInteraction = DateTime.Now;
         private Point mouseLocation = Point.Empty;
@@ -65,6 +66,14 @@ namespace ScreenSaver
             MaximizeVideo();
 
             ShowButtons();
+
+            //DetermineCurrentVideo();
+        }
+
+        private void DetermineCurrentVideo()
+        {
+            currentVideoIndex = (Now().Minute / 10);
+            fileStartTime = new TimeSpan(Now().Hour, (Now().Minute / 10) * 10, 0);
         }
 
         public ScreenSaverForm(Rectangle Bounds, bool shouldCache, bool showVideo) : this()
@@ -333,6 +342,8 @@ namespace ScreenSaver
                     return;
                 }
 
+                DetermineCurrentVideo();
+
                 string url = Movies[currentVideoIndex].url;
 
                 if (Caching.IsHit(url))
@@ -342,14 +353,30 @@ namespace ScreenSaver
                 else
                 {
                     player.URL = url;
+
+                  
+
                     if (cacheEnabled && shouldCache && 
                         !previewMode &&  !Caching.IsCaching(url)) {
                         Caching.StartDelayedCache(url);
                     }
                 }
-                currentVideoIndex++;
-                if (currentVideoIndex >= Movies.Count)
-                    currentVideoIndex = 0;
+
+                // start video from X
+                //the currentPosition property gets or sets the current position in the media item in seconds from the beginning.
+                //player.Ctlcontrols.currentPosition = 60;
+
+                //var diff = fakeNow - fileStart;
+                var diff = new TimeSpan(Now().Hour, Now().Minute, Now().Second) - fileStartTime;
+
+                player.Ctlcontrols.currentPosition = diff.TotalSeconds;
+
+
+                //currentVideoIndex++;
+                if ((currentVideoIndex + 1) >= Movies.Count)
+                    //TODO: use DateTime to determine next video?
+                    //currentVideoIndex = 0;
+                    DetermineCurrentVideo();
             }
         }
 
@@ -367,6 +394,10 @@ namespace ScreenSaver
             {
                 ShowButtons(false);
             }
+
+            label1.Text = $"{Now().ToLongTimeString()}. currentVideoIndex: {currentVideoIndex}";
+            //the currentPosition property gets or sets the current position in the media item in seconds from the beginning.
+            //player.Ctlcontrols.currentPosition = player.Ctlcontrols.currentPosition + 60;
         }
 
         private void player_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
@@ -427,6 +458,13 @@ namespace ScreenSaver
         {
             if (!previewMode && !windowMode)
                 Application.Exit();
+        }
+
+        DateTime Now()
+        {
+            return DateTime.Now
+                    .AddMinutes(0)
+                ;
         }
 
     }

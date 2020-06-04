@@ -1,0 +1,50 @@
+[
+  {
+    "id": "73F3F654-9EC5-4876-8BF6-474E22029A49",
+    "assets": [
+      {
+        "url": "C:\\Users\\ros\\Downloads\\screensaver\\out\\480\\output000.mp4",
+        "accessibilityLabel": "",
+        "type": "video",
+        "id": "2A57BB93-1825-484C-9609-FF8580CAE77B",
+        "timeOfDay": ""
+      },
+      {
+        "url": "C:\\Users\\ros\\Downloads\\screensaver\\out\\480\\output001.mp4",
+        "accessibilityLabel": "",
+        "type": "video",
+        "id": "0B6C464C-A941-450F-9F4D-AB456C419695",
+        "timeOfDay": ""
+      },
+      {
+        "url": "C:\\Users\\ros\\Downloads\\screensaver\\out\\480\\output002.mp4",
+        "accessibilityLabel": "",
+        "type": "video",
+        "id": "8244D86D-8552-46F4-9F0D-8CFDB128DF4B",
+        "timeOfDay": ""
+      },
+      {
+        "url": "C:\\Users\\ros\\Downloads\\screensaver\\out\\480\\output003.mp4",
+        "accessibilityLabel": "",
+        "type": "video",
+        "id": "A6EEA1F6-F6E2-4CE7-85CA-F8D03F9A6FA8",
+        "timeOfDay": ""
+      },
+      {
+        "url": "C:\\Users\\ros\\Downloads\\screensaver\\out\\480\\output004.mp4",
+        "accessibilityLabel": "",
+        "type": "video",
+        "id": "0F4504A3-9722-4A6D-957D-81E409DE1969",
+        "timeOfDay": ""
+      },
+      {
+        "url": "C:\\Users\\ros\\Downloads\\screensaver\\out\\480\\output005.mp4",
+        "accessibilityLabel": "",
+        "type": "video",
+        "id": "E158F27F-A4F5-4035-9BE0-7535A1E35EE9",
+        "timeOfDay": ""
+      }
+
+    ]
+  }
+]

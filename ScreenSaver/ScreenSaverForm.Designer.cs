@@ -32,6 +32,7 @@
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +81,17 @@
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
             // ScreenSaverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,6 +99,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(960, 540);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.player);
@@ -99,6 +112,7 @@
             this.Shown += new System.EventHandler(this.ScreenSaverForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -106,6 +120,7 @@
         private AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Label label1;
     }
 }
 
