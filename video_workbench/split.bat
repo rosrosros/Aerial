@@ -1,0 +1,1 @@
+FFmpeg_Batch_Converter_Portable\ffmpeg -i "C:\Users\ros\Downloads\screensaver\First 3 min HD.mp4" -c copy -map 0 -segment_time 00:01:00 -f segment -reset_timestamps 1 C:\Users\ros\Downloads\screensaver\out\output%%03d.mp4

@@ -1,0 +1,1 @@
+FFmpeg_Batch_Converter_Portable\ffmpeg -i "E:\24h 480P Render (Smaller)\FullLength_480P.mp4" -c copy -map 0 -segment_time 00:10:00 -f segment -reset_timestamps 1 C:\Users\ros\Downloads\screensaver\out\480\output%%03d.mp4
